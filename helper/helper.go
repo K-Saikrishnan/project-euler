@@ -29,3 +29,18 @@ func Lcm(integers ...int) int {
 	}
 	return lcm
 }
+
+func IsPrime(num int) bool {
+	if num == 2 {
+		return true
+	} else if num == 1 || num%2 == 0 {
+		return false
+	}
+
+	for i := 3; i*i <= num; i += 2 {
+		if num%i == 0 {
+			return false
+		}
+	}
+	return true
+}
